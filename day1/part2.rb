@@ -2,9 +2,8 @@ NUMBER_WORDS = %w(one two three four five six seven eight nine).zip("1".."9")
 REVERSE_NUMBER_WORDS = NUMBER_WORDS.map { |word, number| [word.reverse, number] }
 
 def first_number(line, number_words=NUMBER_WORDS)
-  first_num = ""
   i = 0
-  while first_num.empty?
+  while true # input guarantees a return value
     if ('0'..'9').include?(line.chars[i])
       return line.chars[i]
     end
