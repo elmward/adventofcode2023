@@ -34,22 +34,22 @@ describe "first_number" do
   end
 end
 
-describe "right_number" do
+describe "last_number" do
   it "identifies a digit" do
-    expect(right_number("1")).to eq "1"
+    expect(last_number("1")).to eq "1"
   end
 
   %w(one two three four five six seven eight nine).each.with_index do |word, i|
     it "identifies #{word}" do
-      expect(right_number(word)).to eq (i + 1).to_s
+      expect(last_number(word)).to eq (i + 1).to_s
     end
   end
 
   it "prefers the rightmost word" do
-    expect(right_number("twone")).to eq "1"
+    expect(last_number("twone")).to eq "1"
   end
 
   it "finds the rightmost number even if internal" do
-    expect(right_number("abc1defninezxy")).to eq "9"
+    expect(last_number("abc1defninezxy")).to eq "9"
   end
 end
