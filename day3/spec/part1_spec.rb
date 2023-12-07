@@ -11,7 +11,6 @@ describe "parse_diagram" do
   end
 
   it "properly parses the diagram" do
-    puts diagram_input.split("\n").inspect
     expect(parse_diagram(diagram_input)).to eq({
       numbers: {
         [0,0] => 56,
@@ -75,6 +74,18 @@ describe "adjacent?" do
     expect(adjacent?([1,3], [0,0], 2)).to eq false
   end
 end
+
+describe "adjacent_positions" do
+  it "returns adjacent positions for one point" do
+    expect(adjacent_positions([1,1], 1)).to eq [[0,0], [0,1], [0,2], [1,0], [1,2], [2,0], [2,1], [2,2]]
+  end
+
+  it "returns adjacent positions for a string" do
+    expect(adjacent_positions([2,2], 2)).to eq [[1,1], [1,2], [1,3], [1,4], [2,1], [2,4], [3,1], [3,2], [3,3], [3,4]]
+  end
+
+end
+
 describe "part_number?" do
   context "when there is a symbol to the right" do
     let(:diagram) do
