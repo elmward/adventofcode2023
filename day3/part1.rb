@@ -7,10 +7,9 @@ end
 def part_number?(position, diagram)
   number = diagram[:numbers][position]
   number_length = number.digits.length
-  val = diagram[:symbols].any? do |symbol_position, _|
+  diagram[:symbols].any? do |symbol_position, _|
     adjacent?(symbol_position, position, number_length)
   end
-  val
 end
 
 def parse_diagram(input)
