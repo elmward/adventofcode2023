@@ -1,4 +1,3 @@
-# FIXME: pivoted away from this but keeping in case it's useful for part 2
 def adjacent?(char_pos, string_pos, length)
   (string_pos[0] - char_pos[0]).abs <= 1 &&
   (char_pos[1] - string_pos[1]) >= -1 &&
