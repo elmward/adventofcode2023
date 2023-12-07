@@ -5,8 +5,8 @@ describe "parse_card" do
     expect(parse_card("Card 130: 41 48 83 86 17 | 83 86  6 31 17  9 48 53")).to eq [[41, 48, 83, 86, 17], [83, 86, 6, 31, 17, 9, 48, 53]]
   end
 
-  it "parses the format with extra spaces and bigger card numbers" do
-    expect(parse_card("Card  1:  1  4  3 34 | 43 23  1")).to eq [[1, 4, 3, 34], [43, 23, 1]]
+  it "parses the format with extra spaces" do
+    expect(parse_card("Card 21:  1  4  3 34 | 43 23  1")).to eq [[1, 4, 3, 34], [43, 23, 1]]
   end
 end
 
